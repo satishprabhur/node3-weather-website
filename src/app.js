@@ -62,19 +62,20 @@ app.get('/weather', (req, res) => {
                 })
             }
 
-            forecast(req.query.address, (forecastError, {weather_descriptions,humidity}) => {
+            forecast(req.query.address, (forecastError, {weather_descriptions,humidity,is_day}) => {
                 if (forecastError) {
                     return res.send({
                         Error: forecastError
                     })
                 }
-
+                //console.log(latitude, longitude, weather_descriptions,humidity,is_day)
                 return res.send({
                     location: location,
                     latitude: latitude,
                     longitude: longitude,
                     desc: weather_descriptions,
-                    humidity: humidity
+                    humidity: humidity,
+                    is_day: is_day
                 })
 
             })

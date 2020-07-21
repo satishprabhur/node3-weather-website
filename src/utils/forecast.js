@@ -10,6 +10,7 @@ const forecast = (address, callback) => {
         } else if (body.success === false) {
             callback('Incorrect location. correct and try again.', undefined)
         }else {
+            console.log(body.current.weather_descriptions,body.current.humidity,body.current.is_day)
             callback(undefined, {
                 weather_descriptions:  body.current.weather_descriptions[0],
                 humidity: body.current.humidity,
