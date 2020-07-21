@@ -12,7 +12,9 @@ const forecast = (address, callback) => {
         }else {
             callback(undefined, {
                 weather_descriptions:  body.current.weather_descriptions[0],
-                humidity: body.current.humidity
+                humidity: body.current.humidity,
+                is_day: body.current.is_day
+
             })
         }
     })
