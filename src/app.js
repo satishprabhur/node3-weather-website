@@ -11,7 +11,7 @@ const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
 
-const port = public.env.PORT || 3000
+const port = process.env.PORT || 3000
 
 console.log(publicDirectoryPath)
 // Setup handlebars engine and views location
